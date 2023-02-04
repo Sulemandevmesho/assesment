@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './components/navbar/navbar';
-import Header from './components/header/header';
-import Middle from './components/middle/middle';
+import Header from './components/header/Header';
+import MianPage from './Screens/Mianpage';
 import Footer from './components/footer/footer';
 
 
@@ -11,7 +11,7 @@ function App() {
       <Navbar/>
       <div className="container-fluid">
         <Header/>
-        <Middle/>
+        <MianPage/>
         <Footer/>
       </div>
     </div>
