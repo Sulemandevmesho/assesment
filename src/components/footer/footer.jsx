@@ -1,4 +1,5 @@
 const Footer = () => {
+  //clip-path: polygon(10% 19%,54% 0,96% 17%,100% 83%,54% 100%,0 74%); image like svg !importent
   return (
     <div className="row" style={{backgroundColor: "linear-gradient(180deg, rgba(0, 91, 226, 0.04) 0%, rgba(0, 91, 226, 0) 100%)"}}>
       <h4 className="mt-5">사용후기</h4>

@@ -1,3 +1,5 @@
+import "./Mianpage.css"
+import rightside from '../svg/right-side.svg'
 const Middle = () => {
   return (
     <div className="row">
@@ -29,8 +31,8 @@ const Middle = () => {
             <button className="btn btn-outline-primary m-1">이론탐구</button>
           </div>
         </div>
-        <div className="col-sm-6" style={{backgroundColor: "grey"}}>
-
+        <div className="col-sm-6">
+          <img src={rightside} alt="rightside" />
         </div>
       </div>
     </div>
