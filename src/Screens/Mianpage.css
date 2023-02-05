@@ -1,0 +1,21 @@
+.results>div>h5 {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 58px;
+    letter-spacing: -0.03em;
+    color: #1C319F !important;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.ability{
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+}
+.ability-left{
+    text-align: center;
+}

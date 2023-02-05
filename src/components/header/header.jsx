@@ -8,8 +8,8 @@ const Header = () => {
         viewBox="0 0 1920 60"
         preserveAspectRatio="none"
         fill="#fff"
-        style={{backgroundColor:"#005BE20A"}}
-        class="angular-1920-1 hero__shape"
+        style={{ backgroundColor: "#005BE20A" }}
+        className="angular-1920-1 hero__shape"
       >
         <path d="m0 20 420 40L800 0l750 60 370-45V0H0z"></path>
       </svg>
@@ -27,7 +27,13 @@ const Header = () => {
         </p>
         <button className="btn btn-primary mt-5">검사시작</button>
       </div>
-      <img src={FullBaner} alt="banner" />
+      <div style={{width:"100%",paddingTop:"10%",backgroundColor: "rgba(0, 91, 226, 0.04)" }}>
+        <img
+          src={FullBaner}
+          alt="banner"
+          style={{ width: "100%"}}
+        />
+      </div>
     </div>
   );
 };
