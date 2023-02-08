@@ -1,0 +1,21 @@
+.icon{
+    display: flex !important;
+    align-items: center;
+}
+.icon>i{
+    position: relative;
+    left: 5%;
+    display: block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    
+    appearance: none;
+   
+}
+
+label{
+    padding-left: 4%  !important;
+}

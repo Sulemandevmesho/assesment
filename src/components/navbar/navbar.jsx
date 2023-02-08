@@ -1,24 +1,49 @@
 import { useEffect, useRef, useState } from "react";
 import {Link, useNavigate} from "react-router-dom";
-import LoginModal from "../modal/loginModal";
-import Popup from "../modal/popup";
-
+import LoginModal from "../modal/LoginModal";
+import EnterMailModal from "../modal/EnterMailModal";
+import ResetPasswordModal from "../modal/ResetPasswordModal";
+import FindMailModal from "../modal/FindMailModal";
+import './navbar.css'
+import SorryModal from "../modal/sorryModal";
 const Navbar = () => {
-  const navigation = useNavigate();
-  //const [search,setSearch]=useState();
   const search=useRef(null);
+  const navigation = useNavigate();
+  
   const [showSearch, setShowSearch] = useState(false);
   const [open, setOpen] = useState(false);
-  const [modal, setModal] = useState(false);
+  const [mailModal, setMailModal] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
-
+  //to  login modal 
   const openLoginModal = () => setLoginModal(true);
   const closeLoginModal = () => setLoginModal(false);
+  // to mail modal
+  const openMailModal =()=>setMailModal(true);
+  const closeMailModel=()=>setMailModal(false);
+  //find mail
+  const [findMailmodal,setFindMailModal]=useState(false);
+  const openFindMailModal =()=>setFindMailModal(true);
+  const closeFindMialModal=()=>setFindMailModal(false);
 
-  const openModal = () => setModal(true);
-  const closeModal = () => setModal(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+
+//to resetpassword modal modal 
+  const [resetModal, setResetModal] = useState(false);
+  
+  const openResetModal = () => setResetModal(true);
+  const closeResetModal = () => setResetModal(false);
+  const heandleResetPass=()=>{
+    closeLoginModal();
+    setResetModal(true);
+    }
+  // warning modal
+  const [sorryModal,setSorryModal]=useState(false); 
+   const openSorryModal = () => setSorryModal(true);
+   const closeSorryModal = () => setSorryModal(false);
+  
+   const heandleMailModal=()=>{
+    closeLoginModal();
+    setMailModal(true);
+  }
   const handleSubmit=(e)=>{
     e.preventDefault();
     let value=search.current.value;
@@ -48,14 +73,14 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto" style={{ flex: 1 }}>
             <li className="nav-item active">
-              <a className="nav-link" href="#">
-                DNA 질문검사{" "}
-              </a>
+              <Link className="nav-link" to="/questiontest">
+                DNA 질문검사
+              </Link>
             </li>
             <li className="nav-item dropdown">
-              <a
+              <Link
                 className="nav-link dropdown-toggle"
-                href="#"
+                to="#"
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -63,61 +88,67 @@ const Navbar = () => {
                 aria-expanded="false"
               >
                 타입 리포트
-              </a>
+              </Link>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="#">
+                <Link className="dropdown-item" to="#">
                   Action
-                </a>
-                <a className="dropdown-item" href="#">
+                </Link>
+                <Link className="dropdown-item" to="#">
                   Another action
-                </a>
+                </Link>
                 <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="#">
+                <Link className="dropdown-item" to="#">
                   Something else here
-                </a>
+                </Link>
               </div>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="#">
                 54DNAtype
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link disabled" href="#">
+              <Link className="nav-link disabled" to="#">
                 학습유전자
-              </a>
+              </Link>
             </li>
           </ul>
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" href="#" onClick={() => setShowSearch(!showSearch)}>
+              <Link className="nav-link" to="#" onClick={() => setShowSearch(!showSearch)}>
                 <i className="fa fa-search"></i>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">
+              <Link to="#" className="nav-link">
                 <i className="fa fa-light fa-globe"></i>
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" onClick={openModal} style={{cursor: "pointer"}}>
+              <Link className="nav-link" to="#" onClick={openLoginModal} style={{cursor: "pointer"}}>
                 로그인{">"}
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <button className="btn btn-primary" type="button" >
+              <button className="btn btn-primary" type="button"  >
                 검사시작
               </button>
             </li>
           </ul>
         </div>
-        {loginModal && <LoginModal opened = {handleOpen} closed = {handleClose} closedModal = {closeLoginModal}/>}
-        {modal && <Popup open={open} opened = {handleOpen} closed = {handleClose} closedModal = {closeModal}/>}
+        {/*here modal shown*/}
+        {mailModal && <EnterMailModal  opened = {mailModal} closed = {!mailModal} closedModal = {closeMailModel} />}
+        {findMailmodal && <FindMailModal opened={findMailmodal} closed={!findMailmodal} closedModal={closeFindMialModal} sorry={openSorryModal}/>}
+        {sorryModal && <SorryModal opened={sorryModal} closed={!sorryModal} closedModal={closeSorryModal} mail={openMailModal} reset={heandleResetPass}/>}
+        {loginModal && <LoginModal opened = {loginModal} closed = {!loginModal} closedModal = {closeLoginModal} mail={openMailModal} reset={heandleResetPass}/>}
+        {resetModal && <ResetPasswordModal opened={resetModal} closed={!resetModal} closedModal={closeResetModal} mail={openMailModal} login={openLoginModal} find={openFindMailModal}/>}
       </> ) :
       <>
         <div className="navbar-nav " style={{ flex: 1 }}>
-          <form onSubmit={handleSubmit} style={{width: "90%"}}>
-          <input type="text" style={{width: "90%", borderRadius: "100px", padding: ".5rem", border: "1px solid #EBEBEB"}}  placeholder="검색어를 입력해 주세요" ref={search} />
+          <form onSubmit={handleSubmit} className="icon" style={{width: "90%"}}>
+            <i className="fa fa-search "></i>
+          <input className="search form-control " type="text" style={{ paddingLeft:"3rem",borderTopLeftRadius:25,borderBottomLeftRadius:25,borderBottomRightRadius:25,borderTopRightRadius:25}}  placeholder="검색어를 입력해 주세요" ref={search} />
+           
           </form>
         </div>
         <div className="navbar-nav">

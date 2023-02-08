@@ -1,0 +1,31 @@
+.slider{
+
+    display: flex !important;
+    flex-direction: row !important;
+    overflow: hidden !important;
+}
+.card{
+    margin-left: 15px;
+    border-radius: 15px !important;
+    
+}
+.head{
+    border-radius: 8px;
+    padding-top: 15px;
+    
+}
+.par{
+    
+    border-top: 8px solid purple !important;
+}
+.gre{
+    
+    border-top: 8px solid green !important;
+}
+.sky{
+    
+    border-top: 8px solid skyblue !important;
+}
+.head-img{
+    margin-bottom: 15px;
+}

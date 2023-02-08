@@ -1,0 +1,21 @@
+.mail-icon{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+.mail-icon>div>i{
+    padding-left: 2rem;
+}
+.mail-icon>div{
+    padding: 1rem;
+}
+.mail-icon>.button{
+    display: "flex"; 
+    justify-content: "flex-end";
+    
+    width: 50%;
+}
+.mail-icon>.button>button{
+    width:40%;
+}

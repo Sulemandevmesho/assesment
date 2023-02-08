@@ -5,6 +5,10 @@ import MianPage from "./Screens/Mianpage";
 import Lower from "./components/lower/lower";
 import Search from "./components/search/search";
 import ResetPassword from "./components/resetPassword/resetPassword";
+import Questionier from "./Screens/Questionier";
+import Results from "./Screens/Results";
+import Servise from "./components/servise/Service";
+import Signup from "./components/Signup/Signup"
 
 function App() {
   return (
@@ -17,6 +21,12 @@ function App() {
             <Route path="/" element={<MianPage />} />
             <Route path="/resetpassword" element={<ResetPassword />} />
             <Route path="/search/:query" element={<Search />} />
+            <Route path="/questiontest" element={<Questionier />} />
+            <Route path="/results" element={<Results/>} />
+            <Route path="/serviseagreement" element={<Servise />} />
+            <Route path="/join" element={<Signup />} />
+            <Route path="/results" element={<Results/>} />
+            
           </Routes>
 
           <Lower />
