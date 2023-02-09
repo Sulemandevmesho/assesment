@@ -17,14 +17,14 @@ const Questionier = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return(
-    <div className="row" style={{background:`url(${questionBanner})`,backgroundRepeat: "no-repeat",backgroundSize: "auto 30%"}}>
-      <div className="row mb-5 " >
+    <div className="row " style={{background:`url(${questionBanner})`,backgroundRepeat: "no-repeat",backgroundSize: "auto 30%"}}>
+      <div className="row mb-5 m990" >
         <div className="col-sm-12 mb-3 mt-5 text-center ">
           <h3 style={{color: "white"}}><b>DNA 질문검사</b></h3>
         </div>
         <div className="row offset-1 col-10">
           <div className="card-group">
-            <div className="card col-3 m-2">
+            <div className="card  m-2">
               <img className="card-img-top"  src={clock} alt="Card image cap"/>
               <div className="card-body">
                 <p className="card-text">각 유형별 검사의 질문 응답은 8분 이내가 좋습니다.</p>

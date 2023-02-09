@@ -14,9 +14,9 @@ const Service = () => {
     e.preventDefault();
     console.log('call');
     if(terms && personalInformation && marketingInformation){
-      navigate('/join');
-    }else{
       openModal();
+    }else{
+      alert('당신은 그 조건을 받아들일 수 없다')
     }
   }
   const openModal = () => setModal(true);
@@ -44,7 +44,7 @@ const Service = () => {
       </div>
       <div className="offset-1 mt-3" style={{ display: "flex" }}>
         <input name="Terms" value={terms} onChange={()=>setTerms(!terms)} type="checkbox" />
-        <label style={{ paddingLeft: "1%" }}>
+        <label className={terms?'':'red'} style={{ paddingLeft: "1%" }}>
           {" "}
           사이트 이용약관 동의 <span style={{ color: "red" }}>(필수)</span>
         </label>
@@ -76,7 +76,7 @@ const Service = () => {
       </div>
       <div className="offset-1 mt-3" style={{ display: "flex" }}>
         <input name="porsonal_info" value={personalInformation} onChange={()=>setPersonalInformation(!personalInformation)} type="checkbox" />
-        <label style={{ paddingLeft: "1%" }}>
+        <label className={personalInformation?'':'red'} style={{ paddingLeft: "1%" }}>
           {" "}
           개인정보 수집 및 이용 동의{" "}
           <span style={{ color: "red" }}>(필수)</span>
@@ -91,14 +91,14 @@ const Service = () => {
         </p>
         <div className="form-group" style={{ textAlign: "left" }}>
           <input name="markiting-info" value={marketingInformation} onChange={()=>setMarketingInformation(!marketingInformation)} type="checkbox" />
-          <label>마케팅 정보 수신 동의 (선택)</label>
+          <label className={marketingInformation?'':'red'}> 마케팅 정보 수신 동의 (선택)</label>
         </div>
       </div>
       <div className="text-center mt-2">
         <Link className="btn btn-outline-primary m-1 col-2" to="/">
           취소
         </Link>
-        <button type="submit" className="btn btn-primary m-1 col-2" onClick={(e)=>handleValidation(e)}>
+        <button  className="btn btn-primary m-1 col-2" onClick={(e)=>handleValidation(e)}>
           다음
         </button>
       </div>

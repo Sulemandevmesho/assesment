@@ -1,12 +1,12 @@
 import "./Mianpage.css";
 import rightside from "../svg/right-side.svg";
 import Footer from "../components/footer/footer";
-import Header from "../components/header/Header";
+import Header from "../components/header/header";
 const Middle = () => {
   return (
     <div className="row">
       <Header />
-      <div className="row results" style={{ marginTop: "50px" }}>
+      <div className="row results m990" style={{ marginTop: "50px" }}>
         <div className="col-md-3 col-sm-6 col-xs-12">
           <h5>2670건</h5>
           <p>누적 질문검사</p>

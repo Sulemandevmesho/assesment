@@ -12,14 +12,15 @@ const Questions = (props) => {
     <div className="container">
       <ol style={{type: "1", textAlign: "left"}}>
         {props.data.map((question, index) => {
-          return(<li key={index} style={{borderBottom:"1px solid black"}}>
-            <div style={{display:"flex", justifyContent: "space-between", alignContent:"center"}}>
+          return(<li key={index} style={{borderBottom:"1px solid #ced4da"}}>
+            <div style={{display:"flex", justifyContent: "space-between",alignItems:'baseline', alignContent:"center"}}>
               <div style={{flex: "1"}}>{question}</div>
               <div>
                 <button className="btn m-1" style={style}>그렇다</button>
                 <button className="btn m-1" style={style}>아니다</button>
               </div>
             </div>
+            
           </li>)
         })}
       </ol>

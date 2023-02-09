@@ -17,12 +17,13 @@ const LoginModal = ({ opened, closed, closedModal,mail,reset}) => {
     p: 4,
   };
   
+  
   let mailPattern = /^[a-zA-Z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}/;
   let passwordPattern=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,16})/;
   const [mailData,setMailData]=useState('');
   const [password,setPassword]=useState('');
-  const [mailValid,setMailValid]=useState(false);
-  const [passwordValid,setPasswordValid]=useState(false);
+  const [mailValid,setMailValid]=useState(true);
+  const [passwordValid,setPasswordValid]=useState(true);
 
   useEffect(()=>{
     if(!mailPattern.test(mailData)){
@@ -40,6 +41,24 @@ const LoginModal = ({ opened, closed, closedModal,mail,reset}) => {
   },[password]);
   const hendleLogin=(e)=>{
     e.preventDefault();
+    if(!mailValid){
+      alert("올바른 형식을 사용하십시오")
+    }else if(!passwordValid){
+      alert("올바른 형식을 사용하십시오")
+    }
+    if(mailData===""){
+      alert("이메일을 입력하세요");
+    }else if(password===''){
+      alert("암호를 입력");
+    }
+    else if(mailData==="suleman@gmail.com"&& password ==="As200120#"){
+      
+      alert("웰컴!로그인 성공");
+      closedModal();
+      
+    }else
+    alert("귀하의 기록을 찾을 수 없습니다");
+    
   }
   return (
     <Modal open={Boolean(opened)} onClose={closedModal}>
@@ -55,7 +74,7 @@ const LoginModal = ({ opened, closed, closedModal,mail,reset}) => {
           </div>
           <div className="row">
             <form className="">
-              <div className="form-group ">
+              <div className="form-group login">
                 <label
                   htmlFor="email"
                   style={{ textAlign: "left", alignItems: "left" }}
@@ -69,7 +88,7 @@ const LoginModal = ({ opened, closed, closedModal,mail,reset}) => {
                 
               </div>
 
-              <div className="form-group">
+              <div className="form-group login">
                 <label htmlFor="password">비밀번호</label>
                 <div className="icon">
 

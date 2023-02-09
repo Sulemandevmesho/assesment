@@ -2,7 +2,7 @@ import "./Header.css";
 import FullBaner from "../../svg/baner-full.svg";
 const Header = () => {
   return (
-    <div className="row container-fluid">
+    <div className="row m990 container-fluid">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1920 60"

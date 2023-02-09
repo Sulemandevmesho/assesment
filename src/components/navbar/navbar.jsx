@@ -1,12 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import {  useRef, useState } from "react";
 import {Link, useNavigate} from "react-router-dom";
 import LoginModal from "../modal/LoginModal";
 import EnterMailModal from "../modal/EnterMailModal";
 import ResetPasswordModal from "../modal/ResetPasswordModal";
 import FindMailModal from "../modal/FindMailModal";
-import './navbar.css'
 import SorryModal from "../modal/sorryModal";
-const Navbar = () => {
+import DropDown from "../DropDown/DropDown";
+import './navbar.css'
+const Navbar = ({show}) => {
   const search=useRef(null);
   const navigation = useNavigate();
   
@@ -14,6 +15,9 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [mailModal, setMailModal] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
+  const [findMailmodal,setFindMailModal]=useState(false);
+  const [resetModal, setResetModal] = useState(false);
+  const [sorryModal,setSorryModal]=useState(false); 
   //to  login modal 
   const openLoginModal = () => setLoginModal(true);
   const closeLoginModal = () => setLoginModal(false);
@@ -21,13 +25,11 @@ const Navbar = () => {
   const openMailModal =()=>setMailModal(true);
   const closeMailModel=()=>setMailModal(false);
   //find mail
-  const [findMailmodal,setFindMailModal]=useState(false);
   const openFindMailModal =()=>setFindMailModal(true);
   const closeFindMialModal=()=>setFindMailModal(false);
 
 
 //to resetpassword modal modal 
-  const [resetModal, setResetModal] = useState(false);
   
   const openResetModal = () => setResetModal(true);
   const closeResetModal = () => setResetModal(false);
@@ -36,7 +38,6 @@ const Navbar = () => {
     setResetModal(true);
     }
   // warning modal
-  const [sorryModal,setSorryModal]=useState(false); 
    const openSorryModal = () => setSorryModal(true);
    const closeSorryModal = () => setSorryModal(false);
   
@@ -59,15 +60,11 @@ const Navbar = () => {
           logo logo
         </Link>
         <button
-          className="navbar-toggler"
+          className="navbar-toggler humburger"
           type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          onClick={show}
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className="fa fa-bars"></span>
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -84,26 +81,15 @@ const Navbar = () => {
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
+                data-bs-toggle="dropdown" aria-expanded="false"
               >
                 타입 리포트
               </Link>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <Link className="dropdown-item" to="#">
-                  Action
-                </Link>
-                <Link className="dropdown-item" to="#">
-                  Another action
-                </Link>
-                <div className="dropdown-divider"></div>
-                <Link className="dropdown-item" to="#">
-                  Something else here
-                </Link>
-              </div>
+              
+        <DropDown />
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="#">
+              <Link className="nav-link" to="/questiontest">
                 54DNAtype
               </Link>
             </li>

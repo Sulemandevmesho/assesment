@@ -1,0 +1,16 @@
+.sign-label {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.signbtn {
+    margin-left: 5px;
+}
+
+.sign-error {
+    box-shadow: 0 0 10px rgb(234, 153, 153) !important;
+    border-color: rgb(255, 36, 36) !important;
+}
+.red{
+    color: red;
+}

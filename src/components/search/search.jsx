@@ -10,8 +10,8 @@ const Search = () => {
   },[query]);
   return(
     <div className="container">
-      <div className="row mt-5">
-        <div className="col-sm-12" style={{textAlign: "left"}}>
+      <div className="row mt-5 ">
+        <div className="col-sm-12 m990" style={{textAlign: "left"}}>
           <h4>검색 결과</h4>
         </div>
       </div>

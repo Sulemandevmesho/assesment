@@ -6,7 +6,7 @@ const Results = () => {
   return (
     <div className="row ">
       <div
-        className="card mb-3 offset-1 border-none col-10"
+        className="card mb-3 m990 offset-1 border-none col-10"
         style={{
           display: "flex",
           justifyContent: "center",

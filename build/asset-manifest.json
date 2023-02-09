@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6f55fe42.css",
+    "main.js": "/static/js/main.5bc7a8ea.js",
+    "static/media/footer-baner.svg": "/static/media/footer-baner.6fd293358b78bc851739a032ed4aa156.svg",
+    "static/media/baner-full.svg": "/static/media/baner-full.bf7075099bf483177ee327d55d23bfc3.svg",
+    "static/media/result.svg": "/static/media/result.e7fdd8756a9e9dd9254ae8135f2f61a2.svg",
+    "static/media/right-side.svg": "/static/media/right-side.9e75beceb193e460b7989046d11ef6b9.svg",
+    "static/media/warning.svg": "/static/media/warning.da5f607a16c81e9e21f382e6f5217997.svg",
+    "static/media/o4A.svg": "/static/media/o4A.3a20a66e3d1f7b9d49ab697fe9155704.svg",
+    "static/media/loading.svg": "/static/media/loading.a25fff401f96dc498eb789c15825e6e7.svg",
+    "static/media/health.svg": "/static/media/health.43c6d91366ce4e179fba95827a71d11b.svg",
+    "static/media/heart.svg": "/static/media/heart.3b0877822b938a9ca3b17c8f7389b8c0.svg",
+    "static/media/service2.svg": "/static/media/service2.4618b2a70f1f90baed5daba20e44e741.svg",
+    "static/media/signupBgImg.svg": "/static/media/signupBgImg.24e8440d115bbbd84d8f87360a460d11.svg",
+    "index.html": "/index.html",
+    "static/media/clock.svg": "/static/media/clock.84bf4dd1e31aefb7fe938d44811e03ba.svg",
+    "static/media/questionBanner.svg": "/static/media/questionBanner.191078e8b6c0015b5c1cba4ada2ce5cb.svg",
+    "static/media/service1.svg": "/static/media/service1.623514e7cc78d4de2f205373d3e966b7.svg",
+    "main.6f55fe42.css.map": "/static/css/main.6f55fe42.css.map",
+    "main.5bc7a8ea.js.map": "/static/js/main.5bc7a8ea.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6f55fe42.css",
+    "static/js/main.5bc7a8ea.js"
+  ]
+}
